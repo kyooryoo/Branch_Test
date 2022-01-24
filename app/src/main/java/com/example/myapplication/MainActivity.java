@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -21,6 +22,7 @@ import io.branch.referral.util.LinkProperties;
 import io.branch.referral.util.ShareSheetStyle;
 
 public class MainActivity extends AppCompatActivity {
+    String url= "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 .setFeature("sharing")
                 .setCampaign("branch home test")
                 .setStage("new user")
-                .addControlParameter("$desktop_url", "https://help.branch.io/developers-hub/docs/android-sdk-overview")
                 .addControlParameter("custom", "data")
                 .addControlParameter("deep_link_test", "other")
                 .addControlParameter("custom_random", Long.toString(Calendar.getInstance().getTimeInMillis()));
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLinkShareResponse(String sharedLink, String sharedChannel, BranchError error) {
                 if (error != null) {
-                    Log.i("My App", "Share Failed: " + error.getMessage());
+                    Log.i("MyApp", "Share Failed: " + error.getMessage());
                 } else {
                     Log.i("MyApp", sharedLink + "is shared by " + sharedChannel);
                 }
@@ -96,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
             String check = "\"deep_link_test\":\"other\" exist? ";
             assert value != null;
             Log.i("MyApp", check + (value.equals("other") ? "Yes" : "No"));
+
+            EditText input_url = findViewById(R.id.editText);
+            url = String.valueOf(input_url.getText());
+            lp.addControlParameter("$desktop_url", url);
             buo.showShareSheet(MainActivity.this, lp, ss, sl);
         });
     }
