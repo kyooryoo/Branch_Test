@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Branch Test</string>
+    <string name="share">Share</string>
+    <string name="deep_link_screen">Deep Link Screen</string>
+</resources>
