@@ -8,7 +8,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import org.json.JSONException;
+//import org.json.JSONException;
 
 import java.util.Calendar;
 
@@ -49,28 +49,28 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private final Branch.BranchReferralInitListener branchReferralInitListener = (linkProperties, error) -> {
-        if (error == null) {
-            // apply the comment out change for reaching other activity
-            String test_param = "deep_link_test"; // change to "+clicked_branch_link"
-            assert linkProperties != null;
-            boolean has_deep_link = linkProperties.has(test_param);
-            boolean link_to_other = false;
-            try {
-                link_to_other = linkProperties.get(test_param).toString().equals("other"); // change to "false"
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            if (has_deep_link && link_to_other) {
-                Intent intent = new Intent(MainActivity.this, OtherActivity.class);
-                startActivity(intent);
-                finish();
-            } else {
-                Log.i("MyApp", "No deep link: " + linkProperties);
-            }
-        } else {
-            Log.i("MyApp", error.getMessage());
-        }
+//        if (error == null) {
+//            // apply the comment out change for reaching other activity
+//            String test_param = "deep_link_test"; // change to "+clicked_branch_link"
+//            assert linkProperties != null;
+//            boolean has_deep_link = linkProperties.has(test_param);
+//            boolean link_to_other = false;
+//            try {
+//                link_to_other = linkProperties.get(test_param).toString().equals("other"); // change to "false"
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//
+//            if (has_deep_link && link_to_other) {
+//                Intent intent = new Intent(MainActivity.this, OtherActivity.class);
+//                startActivity(intent);
+//                finish();
+//            } else {
+//                Log.i("MyApp", "No deep link: " + linkProperties);
+//            }
+//        } else {
+//            Log.i("MyApp", error.getMessage());
+//        }
     };
     private void shareMyLink() {
         findViewById(R.id.button).setOnClickListener(view -> {
