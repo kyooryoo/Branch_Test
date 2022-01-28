@@ -6,4 +6,5 @@
     <string name="content_description">Input the URL you want to share</string>
     <string name="default_url">https://help.branch.io/developers-hub/docs/android-sdk-overview</string>
     <string name="hint">https://help.branch.io/developers-hub</string>
+    <string name="back">BACK</string>
 </resources>
