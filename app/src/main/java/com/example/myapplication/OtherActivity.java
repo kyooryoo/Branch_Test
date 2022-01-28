@@ -23,7 +23,7 @@ public class OtherActivity extends AppCompatActivity {
                 (link != null && channel != null) ?
                 Html.fromHtml(String.format(
                         "<b>Following URL shared via %s:</b><br>%s", channel, link)) :
-                "Restart app or go back to share a link"
+                        "Restart app or go back to share a link"
         );
 
         Button backButton=findViewById(R.id.button2);
