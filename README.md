@@ -25,4 +25,4 @@ Do not forget to open a browser and check the shared URL.
 
 ![Screenshot_20220128_213052](https://user-images.githubusercontent.com/16432725/151557387-c6559311-eefb-4199-a72f-443f6d3a2b49.png)
 
-### [Download the relase APK](https://github.com/kyooryoo/Branch_Test/blob/master/app/build/outputs/apk/release/app-release.apk)
+### [Download the relase APK](https://github.com/kyooryoo/Branch_Test/blob/master/app/build/intermediates/apk/release/app-release.apk)
